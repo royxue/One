@@ -40,6 +40,7 @@ public class BtMain extends Activity {
 	// intent request codes
 	private static final int REQUEST_CONNECT_DEVICE = 1;
 	private static final int REQUEST_ENABLE_BT = 2;
+	private static final int GET_SETTIME = 3;
 
 	// Layout
 	private TextView mTitle;
@@ -57,7 +58,7 @@ public class BtMain extends Activity {
 	
 	SimpleDateFormat sdf= new SimpleDateFormat("hh:mm");
 	
-	String Bufff ;
+	String Bufff ="";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -66,12 +67,13 @@ public class BtMain extends Activity {
 		mTitle = (TextView) findViewById(R.id.device_state);
 		// get adapter
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-
+		
 		if (mBluetoothAdapter == null) {
 			Toast.makeText(this, "Bluetooth Not Available", Toast.LENGTH_LONG)
 					.show();
 			finish();
 			return;
+		
 		}
 	}
 
@@ -219,20 +221,21 @@ public class BtMain extends Activity {
 				mConversationArrayAdapter.add("Me:" + writeMessage);//+ "@"+sdf.format(new Date()));
 				break;
 			case MESSAGE_READ:
+				//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 				byte[] readBuf = (byte[]) msg.obj;
 				String readMessage =new String(readBuf,0,msg.arg1);
 				//String readBuffer = null;
-				//if (!readMessage.endsWith("\n"))
-				//	{
-				//	Bufff+= readMessage;
-				//	}
-				//else
-				//	{
-				//	Bufff = Bufff + readMessage;
+				if (!readMessage.endsWith("\n"))
+					{
+					Bufff+= readMessage;
+					}
+				else
+					{
+					Bufff = Bufff + readMessage;
 					mConversationArrayAdapter.add(mConnectedDeviceName + ":"				
-						+ readMessage);
-				//	Bufff = "";
-				//	}
+						+ Bufff);
+					Bufff = "";
+					}
 				// + "@"+sdf.format(new Date()));
 				break;
 			case MESSAGE_DEVICE_NAME:
@@ -269,6 +272,10 @@ public class BtMain extends Activity {
 				Toast.makeText(this, R.string.bt_off, Toast.LENGTH_SHORT).show();
 				finish();
 			}
+		case GET_SETTIME:
+			Bundle setTime = data.getExtras();
+			String stime = setTime.getString("time");
+			sendMessage(stime);
 		}
 	}
 

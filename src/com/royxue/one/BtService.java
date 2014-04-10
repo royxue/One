@@ -388,7 +388,7 @@ public class BtService {
 			@Override
 			public void run()
 			{
-				byte[] buffer = new byte[1024];
+				byte[] buffer = new byte[1024];    
 				int bytes;
 				//keep listening to inputStream
 				while(true)

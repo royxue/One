@@ -1,6 +1,8 @@
 package com.royxue.one;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -55,12 +57,23 @@ public class Alarm extends Activity {
 			            AlarmManager aManager = (AlarmManager)getSystemService(ALARM_SERVICE);
 						aManager.set(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),pi);
 						
-						
-						
-						show.setText(String.valueOf(c.getTimeInMillis()));
-						
+						//String defTime = getString(c.get(c.HOUR_OF_DAY))+getString(c.get(c.MINUTE));
+						Date ttime = c.getTime();
+						SimpleDateFormat sdf  =   new  SimpleDateFormat( "HH:mm:ss" );
+						String stime = sdf.format(ttime);
+						//send set time to BT service
+						Bundle setTime = new Bundle();
+						setTime.putString("time",stime);
+						Intent sendTime  = new Intent(Alarm.this,BtMain.class);
+						sendTime.putExtras(setTime);
+						startActivityForResult(intent,3);                 
+						//show.setText("已设定在闹钟在"+c.getTime());
+						show.setText("已设定在闹钟在"+stime);
 					}
 				},currentTime.get(Calendar.HOUR_OF_DAY),currentTime.get(Calendar.MINUTE),false).show();
+				
+
+				
 				
 			}
 			
