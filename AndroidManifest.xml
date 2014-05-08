@@ -31,7 +31,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.royxue.one.Entrance"
+            android:name="com.royxue.one.Login"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -55,9 +55,7 @@
             android:name="com.royxue.one.Alarm"
             android:label="@string/title_activity_alarm" >
         </activity>
-        <activity
-            android:name=".AlarmDo"
-             >
+        <activity android:name="com.royxue.one.AlarmDo" >
         </activity>
         <activity
             android:name="com.royxue.one.BtDeviceList"
@@ -67,16 +65,20 @@
             android:name="com.royxue.one.BtService"
             android:label="@string/title_activity_bt_service" >
         </activity>
-        <receiver android:name=".CallAlarm" />
-        
+
+        <receiver android:name="com.royxue.one.CallAlarm" />
+
         <meta-data
-    android:name="com.google.android.maps.v2.API_KEY"
-    android:value="AIzaSyBiQ6PwnYdi8b3cz-pIECgfgEohdqZxeN8"/>
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBiQ6PwnYdi8b3cz-pIECgfgEohdqZxeN8" />
         <meta-data
-    android:name="com.google.android.gms.version"
-    android:value="@integer/google_play_services_version" />
-        
-        
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.royxue.one.Entrance"
+            android:label="@string/title_activity_login" >
+        </activity>
     </application>
 
 </manifest>

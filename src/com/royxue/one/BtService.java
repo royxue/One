@@ -7,6 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.util.UUID;
+import java.lang.*;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -32,6 +33,7 @@ public class BtService {
 	private ConnectThread mConnectThread;
 	private ConnectedThread mConnectedThread;
 	private int mState;
+	private String fmsg = "";
 	
 	
 	
@@ -390,7 +392,11 @@ public class BtService {
 			{
 				byte[] buffer = new byte[1024];    
 				int bytes;
-				//keep listening to inputStream
+				int num = 0;
+	    		
+	    		byte[] buffer_new = new byte[1024];
+	    		int i = 0;
+	    		int n = 0;
 				while(true)
 				{
 					try
@@ -398,14 +404,32 @@ public class BtService {
 						//ConnectedThread.sleep(1000);
 						//read from InputStream
 						bytes = mmInStream.read(buffer);
+						//Thread.sleep(1000);
 						//send bytes to UI
-						mHandler.obtainMessage(BtMain.MESSAGE_READ, bytes , -1,buffer).sendToTarget();
+n=0;
+    					
+    					String s0 = new String(buffer,0,num);
+    					fmsg+=s0;    //保存收到数据
+    					for(i=0;i<num;i++){
+    						if((buffer[i] == 0x0d)&&(buffer[i+1]==0x0a)){
+    							buffer_new[n] = 0x0a;
+    							i++;
+    						}else{
+    							buffer_new[n] = buffer[i];
+    						}
+    						n++;
+    					}
+						mHandler.obtainMessage(BtMain.MESSAGE_READ, bytes , -1,buffer_new).sendToTarget();
+						
 					}
 					catch(IOException e)
 					{
 						connectionLost();
 						break;
-					}
+					} //catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						//e.printStackTrace();
+					//}
 				}
 				try {  
                     ConnectedThread.sleep(1000);  

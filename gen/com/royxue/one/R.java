@@ -209,54 +209,63 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f02001d;
     }
     public static final class id {
-        public static final int action_settings=0x7f060019;
-        public static final int alarm=0x7f060014;
-        public static final int alarm_state=0x7f060005;
-        public static final int bt=0x7f060011;
-        public static final int device_state=0x7f06000c;
-        public static final int discoverable=0x7f06001b;
-        public static final int edit_text_out=0x7f06000e;
+        public static final int action_settings=0x7f060020;
+        public static final int alarm=0x7f06001b;
+        public static final int alarm_state=0x7f06000c;
+        public static final int bt=0x7f060018;
+        public static final int device_state=0x7f060013;
+        public static final int discoverable=0x7f060022;
+        public static final int edit_text_out=0x7f060015;
+        public static final int email=0x7f060005;
         public static final int hybrid=0x7f060004;
-        public static final int id_out=0x7f060017;
-        public static final int in=0x7f06000d;
-        public static final int map=0x7f060012;
-        public static final int name=0x7f060015;
-        public static final int name_out=0x7f060018;
-        public static final int new_devices=0x7f06000a;
+        public static final int id_out=0x7f06001e;
+        public static final int in=0x7f060014;
+        public static final int label1=0x7f060009;
+        public static final int label2=0x7f06000a;
+        public static final int log=0x7f060006;
+        public static final int map=0x7f060019;
+        public static final int name=0x7f06001c;
+        public static final int name_out=0x7f06001f;
+        public static final int new_devices=0x7f060011;
         public static final int none=0x7f060000;
         public static final int normal=0x7f060001;
-        public static final int out=0x7f060016;
-        public static final int paired_devices=0x7f060008;
+        public static final int note=0x7f06000b;
+        public static final int out=0x7f06001d;
+        public static final int paired_devices=0x7f06000f;
+        public static final int pwd=0x7f060008;
+        public static final int reg=0x7f060007;
         public static final int satellite=0x7f060002;
-        public static final int scan=0x7f06001a;
-        public static final int scanit=0x7f06000b;
-        public static final int send=0x7f06000f;
-        public static final int set_alarm=0x7f060006;
-        public static final int sql=0x7f060013;
+        public static final int scan=0x7f060021;
+        public static final int scanit=0x7f060012;
+        public static final int send=0x7f060016;
+        public static final int set_alarm=0x7f06000d;
+        public static final int sql=0x7f06001a;
         public static final int terrain=0x7f060003;
-        public static final int title_new_devices=0x7f060009;
-        public static final int title_paired_devices=0x7f060007;
-        public static final int welcome=0x7f060010;
+        public static final int title_new_devices=0x7f060010;
+        public static final int title_paired_devices=0x7f06000e;
+        public static final int welcome=0x7f060017;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f080000;
     }
     public static final class layout {
-        public static final int alarm=0x7f030000;
-        public static final int bt_device_list=0x7f030001;
-        public static final int bt_device_name=0x7f030002;
-        public static final int bt_main=0x7f030003;
-        public static final int bt_message=0x7f030004;
-        public static final int entrance=0x7f030005;
-        public static final int map=0x7f030006;
-        public static final int sql=0x7f030007;
+        public static final int activity_login=0x7f030000;
+        public static final int alarm=0x7f030001;
+        public static final int bt_device_list=0x7f030002;
+        public static final int bt_device_name=0x7f030003;
+        public static final int bt_main=0x7f030004;
+        public static final int bt_message=0x7f030005;
+        public static final int entrance=0x7f030006;
+        public static final int map=0x7f030007;
+        public static final int sql=0x7f030008;
     }
     public static final class menu {
         public static final int alarm=0x7f0b0000;
         public static final int bt_main=0x7f0b0001;
         public static final int entrance=0x7f0b0002;
-        public static final int map=0x7f0b0003;
-        public static final int sql=0x7f0b0004;
+        public static final int login=0x7f0b0003;
+        public static final int map=0x7f0b0004;
+        public static final int sql=0x7f0b0005;
     }
     public static final class raw {
         public static final int alarm=0x7f040000;
@@ -366,15 +375,19 @@ containing a value of this type.
         public static final int discoverable=0x7f07002c;
         public static final int hello=0x7f070020;
         public static final int hello_alarm=0x7f07003c;
+        public static final int hello_world=0x7f070041;
         public static final int id_out=0x7f070025;
         public static final int in=0x7f070024;
         public static final int input=0x7f07002a;
+        public static final int log_f=0x7f070044;
+        public static final int log_t=0x7f070043;
         public static final int map_start=0x7f07001d;
         public static final int name_in=0x7f070023;
         public static final int none_found=0x7f070039;
         public static final int none_paired=0x7f070036;
         public static final int not_connected=0x7f070030;
         public static final int out=0x7f070026;
+        public static final int reg=0x7f070042;
         public static final int scan=0x7f07002d;
         public static final int scanning=0x7f070037;
         public static final int select_device=0x7f070038;
@@ -386,6 +399,7 @@ containing a value of this type.
         public static final int title_activity_bt_device_list=0x7f07003e;
         public static final int title_activity_bt_main=0x7f070027;
         public static final int title_activity_bt_service=0x7f07003f;
+        public static final int title_activity_login=0x7f070040;
         public static final int title_activity_map=0x7f070021;
         public static final int title_activity_sql=0x7f070022;
         public static final int title_connected_to=0x7f070031;

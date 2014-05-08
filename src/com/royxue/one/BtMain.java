@@ -225,17 +225,7 @@ public class BtMain extends Activity {
 				byte[] readBuf = (byte[]) msg.obj;
 				String readMessage =new String(readBuf,0,msg.arg1);
 				//String readBuffer = null;
-				if (!readMessage.endsWith("\n"))
-					{
-					Bufff+= readMessage;
-					}
-				else
-					{
-					Bufff = Bufff + readMessage;
-					mConversationArrayAdapter.add(mConnectedDeviceName + ":"				
-						+ Bufff);
-					Bufff = "";
-					}
+				mConversationArrayAdapter.add(mConnectedDeviceName + ":" + readMessage);				
 				// + "@"+sdf.format(new Date()));
 				break;
 			case MESSAGE_DEVICE_NAME:

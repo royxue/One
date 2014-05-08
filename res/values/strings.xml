@@ -8,15 +8,12 @@
     <string name="sql_start">上传云端</string>
     <string name="alarm_start">设定闹钟</string>
     <string name="hello">欢迎使用,请选择对应功能</string>
-   
     <string name="title_activity_map">Map</string>
-    
     <string name="title_activity_sql">SQL</string>
     <string name="name_in">输入名字</string>
     <string name="in">上传云端</string>
     <string name="id_out">搜索ID</string>
     <string name="out">执行搜索</string>
-    
     <string name="title_activity_bt_main">BtMain</string>
     <string name="send">发送</string>
     <string name="device_state">设备未连接</string>
@@ -36,14 +33,16 @@
     <string name="scanning">搜索设备</string>
     <string name="select_device">选择设备</string>
     <string name="none_found">未找到设备</string>
-    
     <string name="title_activity_alarm">Alarm</string>
     <string name="set_alarm">设定闹钟</string>
     <string name="hello_alarm">请设定闹钟</string>
-    
-     <string name="title_activity_alarm_do">闹钟响</string>
-     <string name="title_activity_bt_device_list">蓝牙设备</string>
-     <string name="title_activity_bt_service">BtService</string>
-    
+    <string name="title_activity_alarm_do">闹钟响</string>
+    <string name="title_activity_bt_device_list">蓝牙设备</string>
+    <string name="title_activity_bt_service">BtService</string>
+    <string name="title_activity_login">Login</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="reg">成功注册,请登录!</string>
+    <string name="log_t">成功登录!</string>
+    <string name="log_f">不存在用户,请先注册!</string>
 
 </resources>
